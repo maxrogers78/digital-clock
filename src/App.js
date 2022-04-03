@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { useDarkMode, useDateTime } from "./context";
+import { DarkModeButton, DateCard, TimeCard, Title } from "./components";
+import { Footer } from "./layout";
 
-function App() {
+const App = () => {
+  const { isDarkMode } = useDarkMode();
+  const { actualTime } = useDateTime();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className={isDarkMode ? "dark" : ""}>
+      <div className="body">
+        <DarkModeButton />
+
+        <Title title="Digital clock" />
+
+        <DateCard actualTime={actualTime} />
+        <TimeCard actualTime={actualTime} />
+
+        <Footer />
+      </div>
+    </main>
   );
-}
+};
 
 export default App;

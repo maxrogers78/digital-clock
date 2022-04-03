@@ -1,13 +1,32 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .body {
+        @apply relative flex min-h-screen flex-col items-center justify-center gap-5 overflow-x-hidden bg-stone-100 text-stone-900 transition-all duration-150 dark:bg-stone-900 dark:text-stone-100;
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+    .btn-toggle {
+        @apply absolute top-4 left-4 rounded-md border-2 border-stone-900 px-3 py-1 font-medium uppercase tracking-widest shadow-stone-900 transition-all duration-150 hover:bg-stone-900 hover:text-stone-100 hover:shadow-lg dark:border-stone-100 dark:shadow-stone-100/60 dark:hover:bg-stone-100 dark:hover:text-stone-900 md:text-base text-sm;
+    }
+
+    .label-time {
+        @apply absolute -bottom-8 left-1/2 -translate-x-1/2 text-sm uppercase
+    }
+
+    .title {
+        @apply absolute top-20 left-1/2 -translate-x-1/2 text-center text-4xl font-medium uppercase tracking-[1.25rem];
+    }
+}
+
+main ::selection {
+    background-color: #1C1917;
+    color: #F5F5F4;
+}
+main.dark ::selection {
+    color: #1C1917;
+    background-color: #F5F5F4;
 }
