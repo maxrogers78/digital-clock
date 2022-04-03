@@ -1,5 +1,5 @@
 import { useDarkMode, useDateTime } from "./context";
-import { DarkModeButton, DateCard, TimeCard, Title } from "./components";
+import { DarkModeButton, DateCard, TimeCard } from "./components";
 import { Footer } from "./layout";
 
 const App = () => {
