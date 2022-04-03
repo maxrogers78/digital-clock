@@ -11,7 +11,7 @@ const App = () => {
       <div className="body">
         <DarkModeButton />
 
-        <Title title="Digital clock" />
+        {/* <Title title="Digital clock" /> */}
 
         <DateCard actualTime={actualTime} />
         <TimeCard actualTime={actualTime} />
